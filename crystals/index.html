@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Crystals!!!</title>
+</head>
+
+<body>
+        <h2 class="header">Crystals Collectors</h2>
+    <div class="instructions">
+        <p>You will be given a random number at the start of the game.</p>
+
+        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+
+        <p>You win the game by matching your total socre to the random number, you lose the game if your total socre goes above
+            the random number.</p>
+
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+
+        <p>Each time when the game starts, the game will change the value of each crystal.</p>
+
+    </div>
+    <div id="container">
+        <div class="score">
+            <p>
+                <span id="win-lose"></span>
+            </p>
+            <p>Wins:
+                <span id="wins"></span>
+            </p>
+            <p>Losses:
+                <span id="losses"></span>
+            </p>
+        </div>
+        <div class="goal">
+            <span id="computerTotal"></span>
+        </div>
+        <div class="current">
+            <p>Your total score is:
+                <p><span id="userTotal"></span></p>
+            </p>
+        </div>
+    </div>
+    <img class="image" id="gem1" src="./assets/images/green-gem.png" alt="gem1">
+    <img class="image" id="gem2" src="./assets/images/pink-gem.png" alt="gem2">
+    <img class="image" id="gem3" src="./assets/images/diamond-gem.png" alt="gem3">
+    <img class="image" id="gem4" src="./assets/images/blue-gem.png" alt="gem4">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="./assets/javascript/game.js"></script>
+</body>
+
+</html>

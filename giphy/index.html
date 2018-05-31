@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <title>Gifs 4 U</title>
+</head>
+
+<body>
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a id="giphy-brand" class="navbar-brand" href="#">
+                <img src="./assets/images/GYPHY.png" width="40" height="50" alt="">
+            </a>
+            <a id="giphy-title" class="navbar-brand" href="#">GYPHY</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a id="clearBtn" class="nav-link" href="#">Clear Gifs
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="clearFavBtn" class="nav-link" href="#">Clear Favorites
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="addInput" class="form-control mr-sm-2" type="search" placeholder="Soccer Player" aria-label="Search">
+                    <button id="addButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Add</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div id="initialBtnDiv" class="container">
+        <!-- <button class="btn btn-primary" type="submit">Button</button> -->
+    </div>
+    <div id="favoriteBtnDiv" class="container">
+        <!-- <button type="button" class="btn btn-warning">Warning</button> -->
+    </div>
+
+
+    <!--                                     GIFS will be dumped down here!!!                               -->
+    <div id="displayContainer" class="card-group">
+        <!-- <div class="col-sm-4">
+            <div class="card">
+                <img id="pic1" src="./assets/GYPHY.png" class="img-fluid" alt="Responsive image">
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="card-text">Rating</p>
+                    <p class="card-text">Tags</p>
+                    <p>
+                        <a href="#" target="_blank">url</a>
+                    </p>
+                    <a class="btn btn-primary" href="#" role="button">Download</a>
+                    <button id="favoriteButton" type="button" class="btn btn-outline-danger">Add to Favorites</button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="./assets/javascript/app.js"></script>
+
+</body>
+
+</html>

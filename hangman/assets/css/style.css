@@ -1,0 +1,57 @@
+
+body {
+    background-image: url("../images/background2.jpg");
+    background-size: 100%;
+    color: red;
+    font-family: 'Nosifer', cursive;
+    text-align: center;
+}
+.container {
+    width: 1300px;
+    height: 700px;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+.content {
+    border: none;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 450px;
+    height: 700px;
+    float: left;
+}
+#profile {
+    width: 850px;
+    height: 700px;
+    border: none;
+    box-sizing: border-box;
+    float: left;
+}
+#image {
+    box-sizing: border-box;
+    width: 580px;
+    height: 450px;
+    margin: 15px auto;
+}
+#stats {
+    font-size: 13px;
+    margin: 3px 0;
+    padding: 3px;
+    box-sizing: border-box;
+}
+h1 {
+    font-size: 22px;
+}
+h2 {
+    font-size: 20px;
+}
+@media screen and (max-width: 600px) {
+    .content,
+    #profile {
+        width: 100%;
+        margin: 5px auto;
+    }
+    .container {
+        width: 600px;
+    }
+}
