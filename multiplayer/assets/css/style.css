@@ -1,0 +1,29 @@
+
+body {
+    background-color: black;
+    font-family: 'Audiowide', cursive;
+}
+/* Styling for the header on the page */
+.jumbotron {
+    background-image: url("../images/kof-logo.jpg");
+    background-image: 100%;
+    opacity: 0.2;
+} 
+/* Font and background color for the instrunctions inside the alert classes */
+.alert {
+    background-color: orangered;
+}
+/* Erasing the bootstrap margin  and padding of the <a> */
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+/* Adding a border for elements with this class once they are clicked */
+.active{
+    /* vh=1% of viewport height */
+    border: 1vh solid red;
+}
+.badge-primary {
+    font-size: 20px;
+    background-color: red;
+}
