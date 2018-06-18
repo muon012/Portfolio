@@ -106,7 +106,7 @@ $(document).ready(function () {
         $(this).addClass("active");
 
         if (Object.keys(fightersURL).indexOf($(this).attr("data-name") > -1)) {
-            $("#player1FighterChoice").attr("src", fightersURL[$(this).attr("data-name")].win);
+            $("#player1FighterChoice").attr("src", fightersURL[$(this).attr("data-name")].start);
             console.log("correct");
         }
     });
