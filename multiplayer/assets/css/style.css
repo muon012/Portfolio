@@ -3,7 +3,7 @@ body {
     background-color: black;
     font-family: 'Audiowide', cursive;
 }
-/* Styling for the header on the page */
+/* Styling for the title at the top of the page */
 .jumbotron {
     background-image: url("../images/kof-logo.jpg");
     background-image: 100%;
@@ -13,7 +13,7 @@ body {
 .alert {
     background-color: orangered;
 }
-/* Erasing the bootstrap margin  and padding of the <a> */
+/* Erasing the bootstrap margin and padding of the <a> */
 .navbar-brand {
     margin: 0;
     padding: 0;
@@ -23,7 +23,20 @@ body {
     /* vh=1% of viewport height */
     border: 1vh solid red;
 }
+/* Styling for the username displays */
 .badge-primary {
     font-size: 20px;
     background-color: red;
+}
+/* Styling the color of the r,p,s buttons */
+.choicesBtn {
+    background-color: purple;
+    color: white;
+}
+/* chat instrunctions font */
+#chatInstructions {
+    color: white;
+}
+#chatBox {
+    overflow: auto;
 }
