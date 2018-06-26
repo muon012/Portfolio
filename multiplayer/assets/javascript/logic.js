@@ -25,9 +25,9 @@ $(document).ready(function () {
     });
 
     // Inititalize values
-    var players = 0;
     var player1 = "Player1";
     var player2 = "Player2";
+    var players = [ player1, player2];
     var winsPlayer1 = 0;
     var lossesPlayer1 = 0;
     var winsPlayer2 = 0;
@@ -125,37 +125,38 @@ $(document).ready(function () {
         },
 
     };
-    // // Updating the page if there are players on the game already.
-    // database.ref().on("value", function (snapshot) {
-    //     if (players === 2) {
-    //         $("#tooManyPlayersModal").modal("toggle");
-    //         $("#manyPlayersModalButton").on("click", function (e) {
-    //             window.close();
-    //         });
-    //     }
-    //     else if (players === 1) {
-    //         $("#justOnePlayerModal").modal("toggle");
-    //     }
-    //     else if (players === 0) {
-    //         $("#welcomeModal").modal("toggle");
+
+    // Updating the page if there are players on the game already.
+    database.ref().on("value", function (snapshot) {
+        // if (players === 2) {
+        //     $("#tooManyPlayersModal").modal("toggle");
+        //     $("#manyPlayersModalButton").on("click", function (e) {
+        //         window.close();
+        //     });
+        // }
+        // else if (players === 1) {
+        //     $("#justOnePlayerModal").modal("toggle");
+        // }
+        // else if (players === 0) {
+        //     $("#welcomeModal").modal("toggle");
+        // }
+    });
+
+    // var userListRef = firebase.database().ref("USERS_ONLINE");
+    // var myUserRef = userListRef.push();
+
+    // // Monitor connection state on browser tab
+    // firebase.database().ref(".info/connected").on("value", function (snap) {
+    //     if (snap.val()) {
+    //         // if we lose network then remove this user from the list
+    //         myUserRef.onDisconnect().remove();
+    //         // set user's online status
+    //         setUserStatus("online");
+    //     } else {
+    //         // client has lost network
+    //         setUserStatus("offline");
     //     }
     // });
-
-    var userListRef = firebase.database().ref("USERS_ONLINE");
-    var myUserRef = userListRef.push();
-
-    // Monitor connection state on browser tab
-    firebase.database().ref(".info/connected").on("value", function (snap) {
-        if (snap.val()) {
-            // if we lose network then remove this user from the list
-            myUserRef.onDisconnect().remove();
-            // set user's online status
-            setUserStatus("online");
-        } else {
-            // client has lost network
-            setUserStatus("offline");
-        }
-    });
 
     // Choosing a username for player-1 - on click events for the submit button
     $("#userBtn").on("click", function (e) {
@@ -163,16 +164,18 @@ $(document).ready(function () {
 
         var username = $("#username").val().trim();
         $(".player1").text(username);
-
-        database.ref("players").push(username, function(err){
-            if(err){
-                console.log(err);
-            }
-            else{
-                console.log("Player Added");
-            }
-        });
         $("#username").val("");
+
+        database.ref().set({
+            "player1": username,
+        });
+        
+        database.ref("players").push({
+            users: players,
+            choice: null,
+            turn: 1
+        });
+
 
         console.log("UserName clicked");
     });
@@ -205,12 +208,15 @@ $(document).ready(function () {
         var chatMessage = $("#chatInput").val().trim();
         $("#chatInput").val("");
 
-        var newChat = $("<p>");
-        newChat.addClass("card-text");
-        newChat.text(chatMessage);
-        $("#chatBox").append(newChat);
-        $("#chatContainer").scroll();
+        database.ref("chat").push({
+            player: username,
+            time: firebase.database.ServerValue.TIMESTAMP,
+            message: chatMessage
+        });
 
-        console.log("Chat clicked");
+        var newChat = $("<p>");
+        newChat.text(username + ": " + chatMessage);
+        $("#chatBox").append(newChat);
+        console.log("Chat-btn clicked");
     });
 })
