@@ -1,58 +1,117 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <!-- CSS file -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-    <script src="main.js"></script>
 </head>
+
 <body>
-    <div id="main-header">
-        <div id="top">
-            <div id="header">
-                Eduardo Fernandez
+    <nav class="navbar navbar-expand-lg navbar-light bg-white p-0">
+        <div class="container">
+            <a id="brand" class="navbar-brand text-center p-3" href="./index.html">Eduardo Fernandez</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
-            <div class="nav" id="contact"><a href="./contact.html">Contact</a>            
-            </div>
-            <div class="nav"><a href="./portfolio.html">Portfolio</a>
-            </div>
-            <div class="nav"><a href="./index.html">About</a>
+        </div>
+    </nav>
+
+    <div id="wrapper" class="container my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="container-heading">Portfolio</h1>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4 my-3 apps">
+                                <a href="./hangman/index.html">
+                                    <img id="profile-pic" src="./assets/images/hangman.jpeg" class="img-fluid rounded" alt="Responsive image">
+                                    <div class="banner">
+                                        <p class="text-center py-3 m-0">Hangman</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 my-3 apps">
+                                <a href="./crystals/index.html">
+                                    <img id="profile-pic" src="./assets/images/diamonds.png" class="img-fluid rounded" alt="Responsive image">
+                                    <div class="banner">
+                                        <p class="text-center py-3 m-0">Crystals Game</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 my-3 apps"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 my-3 apps">
+                                <a href="./trivia/index.html">
+                                    <img id="profile-pic" src="./assets/images/homer-trivia.jpg" class="img-fluid rounded" alt="Responsive image">
+                                    <div class="banner">
+                                        <p class="text-center py-3 m-0">Trivia</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 my-3 apps">
+                                <a href="./giphy/index.html">
+                                    <img id="profile-pic" src="./assets/images/cat1.jpg" class="img-fluid rounded" alt="Responsive image">
+                                    <div class="banner">
+                                        <p class="text-center py-3 m-0">Giphy</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 my-3 apps"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 my-3 apps">
+                                <a href="./multiplayer/index.html">
+                                    <img id="profile-pic" src="./assets/images/rps.jpg" class="img-fluid rounded" alt="Responsive image">
+                                    <div class="banner">
+                                        <p class="text-center py-3 m-0">RPS Game</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 my-3 apps"></div>
+                            <div class="col-md-4 my-3 apps"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="wraper" id="portfolio-wraper">
-        <div id="second-header">
-            <strong>Portfolio</strong>
-        </div>
-        <div id="images">
-            <div class="pics" id="pic1">
-                <a href="./hangman/index.html"><img src="./assets/images/hangman.jpeg" alt="Hung Bunny" /></a>
-                <div class="banner">Hangman</div>
-            </div>
-            <div class="pics" id="pic2">
-                <a href="./crystals/index.html"><img src="./assets/images/diamonds.png" alt="Crystal" /></a>
-                <div class="banner">Crystals</div>
-            </div>
-            <div class="pics" id="pic3">
-                <a href="./trivia/index.html"><img src="./assets/images/homer-trivia.jpg" alt="Homer Thinking" /></a>
-                <div class="banner">Trivia</div>
-            </div>
-            <div class="pics" id="pic4">
-                <a href="./giphy/index.html"><img src="./assets/images/cat1.jpg" alt="Cat Gif" /></a>
-                <div class="banner">Gifs Generator</div>
-            </div>
-            <div class="pics" id="pic5">
-                <a href="./multiplayer/index.html"><img src="./assets/images/rps.jpg" alt="Gun vs Rock,Paper & Scissors" /></a>
-                <div class="banner">Rock,Paper,Scissors</div>
-            </div>
-        </div>
-    </div>
-    <div id="push">
-    </div>
-    <div id="footer">
-        Copyright &copy;
-    </div>
+
+    <footer class="footer container-fluid text-center">
+        <p class="mb-0 pt-3">Copyright &copy;</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

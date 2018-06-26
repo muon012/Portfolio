@@ -6,8 +6,8 @@ body {
 /* Styling for the title at the top of the page */
 .jumbotron {
     background-image: url("../images/kof-logo.jpg");
-    background-image: 100%;
-    opacity: 0.2;
+    background-size: 100% 100%;
+    /* opacity: 0.2; */
 } 
 /* Font and background color for the instrunctions inside the alert classes */
 .alert {
@@ -29,7 +29,7 @@ body {
     background-color: red;
 }
 /* Styling the color of the r,p,s buttons */
-.choicesBtn {
+.choices1Btn, .choices2Btn {
     background-color: purple;
     color: white;
 }
@@ -37,6 +37,7 @@ body {
 #chatInstructions {
     color: white;
 }
-#chatBox {
+#chatContainer {
+    height: 200px;
     overflow: auto;
 }

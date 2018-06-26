@@ -15,8 +15,68 @@
 </head>
 
 <body>
+  <!-- Modal when there are 2 players playing already-->
+  <div class="modal fade" id="tooManyPlayersModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tooManyPlayersModalLabel">Too Many Players Already:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>There are already 2 players playing. Please wait until they finish</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="manyPlayersModalButton" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal when there is just one player playing-->
+  <div class="modal fade" id="justOnePlayerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="justOnePlayerModalLabel">Player waiting for you:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>The other player is ready to accept your challenge</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="modalButton" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal when no player is playing -->
+  <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="welcomeModalLabel">Welcome to Rock, Paper, Scissors KoF style!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Choose a name, a fighter, and a choice (rock, paper, or scissors) and win!!!!! (or lose,lol)</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="modalButton" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Beginning of page content -->
   <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="container text-center">
       <h1 class="display-4">Rock Paper Scissors Multiplayer</h1>
     </div>
   </div>
@@ -120,15 +180,18 @@
     </div>
     <br />
     <div class="container">
+      <div class="alert text-center" id="alerts" role="alert">
+        Alerts
+      </div>
       <div class="row text-center">
         <div class="col mt-2">
           <!-- class="w-100 p-3" lets you take the full width of the whole parent div -->
-          <span class="badge badge-primary w-100 p-3">Player-1</span>
+          <span class="badge badge-primary w-100 p-3 player1">Player-1</span>
         </div>
         <div class="col mt-2">
         </div>
         <div class="col mt-2">
-          <span class="badge badge-primary w-100 p-3">Player-2</span>
+          <span class="badge badge-primary w-100 p-3 player2">Player-2</span>
         </div>
         <div class="w-100">
         </div>
@@ -144,21 +207,29 @@
         <div class="w-100"></div>
         <div class="col mt-2">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button id="player1Rock" class="choicesBtn">Rock</button>
-            <button id="player1Paper" class="choicesBtn">Paper</button>
-            <button id="player1Scissors" class="choicesBtn">Scissors</button>
+            <button id="player1Rock" class="choices1Btn" data-name="player1">Rock</button>
+            <button id="player1Paper" class="choices1Btn" data-name="player1">Paper</button>
+            <button id="player1Scissors" class="choices1Btn" data-name="player1">Scissors</button>
           </div>
         </div>
         <div class="col mt-2">
           <ul class="list-group">
             <li class="list-group-item disabled">Stats</li>
             <li class="list-group-item">
-              <span id="player1">Player-1</span> Wins:
+              <span class="player1">Player-1</span> Wins:
               <span id="player1Wins">3</span>
             </li>
             <li class="list-group-item">
-              <span id="player2">Player-2</span> Wins:
+              <span class="player1">Player-1</span> Losses:
+              <span id="player1Losses">1</span>
+            </li>
+            <li class="list-group-item">
+              <span class="player2">Player-2</span> Wins:
               <span id="player2Wins">4</span>
+            </li>
+            <li class="list-group-item">
+              <span class="player2">Player-2</span> Losses:
+              <span id="player2Losses">10</span>
             </li>
             <li class="list-group-item">Ties:
               <span id="ties">5</span>
@@ -167,15 +238,15 @@
         </div>
         <div class="col mt-2">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button id="player2Rock"class="choicesBtn">Rock</button>
-            <button id="player2Paper"class="choicesBtn">Paper</button>
-            <button id="player2Scissors"class="choicesBtn">Scissors</button>
+            <button id="player2Rock" class="choices2Btn">Rock</button>
+            <button id="player2Paper" class="choices2Btn">Paper</button>
+            <button id="player2Scissors" class="choices2Btn">Scissors</button>
           </div>
         </div>
       </div>
     </div>
     <br />
-    <div class="card">
+    <div class="card" id="chatContainer">
       <div id="chatBox" class="card-body">
         <h5 class="card-title">Chat</h5>
         <p class="card-text">I'm going to beat you!</p>
@@ -191,6 +262,8 @@
     </form>
   </div>
 
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

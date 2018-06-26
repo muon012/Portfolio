@@ -1,44 +1,80 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-    <div id="main-header">
-        <div id="top">
-            <div id="header">
-                Eduardo Fernandez
-            </div>
-            <div class="nav" id="contact"><a href="./contact.html">Contact</a>            
-            </div>
-            <div class="nav"><a href="./portfolio.html">Portfolio</a>
-            </div>
-            <div class="nav"><a href="./index.html">About</a>
-            </div>
-        </div>
-    </div>
-    <div class="wraper">
-        <div id="second-header">
-            <strong>About Me</strong>
-        </div>
-        <div id="about-wraper">
-            <img id="profile" src="./assets/images/Profile.jpg" alt="my picture" />
-            <p>
-            Welcome to my first profesional portfolio. As you can see, this site is very basic and might not work at times if the viewport is changed or due to something else that I'm currently clueless about. Getting back to the topic, I am a person that likes to be organized, productive, and respectful. Although my oral skills might be a bit lower than most people, don't be uninterested in starting a conversation with me or talking about the task at hand. I am always ready to listen and be part of a meaningful engagment. My educational background is not stellar, but that is one of the reasons I am learning software development now. I have always been interested in science, specially astrophysics, and I try to do solve problems in a logical way although sometimes time is an issue and makes me take a chance when solving such problem. I consider myself to be a pretty easy person to get along with and can work well with others.
-            </p>
+<!doctype html>
+<html lang="en">
 
-            <p> My hobbies include: martial arts, football(soccer),anime,k-pop,j-rock,goth and metal music, fantasy genre (except harry potter), video games, science, animals, fighter jets, and more.</p>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <!-- CSS file -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>About</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white p-0">
+        <div class="container">
+            <a id="brand" class="navbar-brand text-center p-3" href="./index.html">Eduardo Fernandez</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="container-heading">About Me</h1>
+                        <hr />
+                        <img id="profile-pic" src="./assets/images/Profile.jpg" class="img-fluid rounded float-left mr-3" alt="Responsive image">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque explicabo aliquam laudantium consequuntur
+                            neque dolore quod ea eos, eius tempore nulla, accusamus assumenda vitae excepturi veritatis sint
+                            suscipit dolor a quaerat optio, dignissimos beatae quis ut. Nostrum eveniet eaque possimus praesentium
+                            repellat error nesciunt voluptates laudantium hic tempora eum cum, ipsam amet sapiente, commodi
+                            harum autem distinctio sequi asperiores ea!</p>
+                        <br />
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos sint sapiente laboriosam quibusdam
+                            quas. Ullam assumenda culpa alias unde accusamus voluptate neque suscipit laboriosam non sapiente
+                            asperiores commodi libero earum, rem qui deleniti numquam nam odit a adipisci nisi.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illo ratione fugit explicabo quae veritatis
+                            quos minima repellat? Similique velit blanditiis nostrum voluptatem repudiandae esse aliquid
+                            totam eum, nam excepturi.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="push">
-    </div>
-    <div id="footer">
-        Copyright &copy;
-    </div>
+
+    <footer class="footer text-center">
+        <p class="mb-0 pt-3">Copyright &copy;</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

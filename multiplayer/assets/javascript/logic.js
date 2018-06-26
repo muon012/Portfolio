@@ -1,5 +1,40 @@
 $(document).ready(function () {
 
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBpHHA7_YVD8wC1r2C7bgDujh7AEjR4M2Y",
+        authDomain: "multiplayer-760c6.firebaseapp.com",
+        databaseURL: "https://multiplayer-760c6.firebaseio.com",
+        projectId: "multiplayer-760c6",
+        storageBucket: "",
+        messagingSenderId: "753712523459"
+    };
+    firebase.initializeApp(config);
+
+    // Create a variable to reference the database
+    var database = firebase.database();
+
+    database.ref().on("value", function (snapshot) {
+
+        if (snapshot.child("players").exists()) {
+
+        }
+
+        var dbProperty = snapshot.val();
+
+    });
+
+    // Inititalize values
+    var players = 0;
+    var player1 = "Player1";
+    var player2 = "Player2";
+    var winsPlayer1 = 0;
+    var lossesPlayer1 = 0;
+    var winsPlayer2 = 0;
+    var lossesPlayer2 = 0;
+    var ties = 0;
+    var turn = 0;
+
     var fighters = ["athena", "igniz", "iori", "k", "k9999", "kula", "kyo", "leona", "mai", "terry", "whip", "yuri"];
 
     // Object with all the different gif animations for each character
@@ -10,7 +45,7 @@ $(document).ready(function () {
             win: "./assets/images/athena/athena-win.gif",
             lose: "./assets/images/athena/athena-lose.gif",
             random: "./assets/images/athena/athena-random.gif"
-        }, 
+        },
         igniz: {
             start: "./assets/images/igniz/igniz-start.gif",
             attack: "./assets/images/igniz/igniz-attack.gif",
@@ -90,30 +125,92 @@ $(document).ready(function () {
         },
 
     };
-    // username button on click events
+    // // Updating the page if there are players on the game already.
+    // database.ref().on("value", function (snapshot) {
+    //     if (players === 2) {
+    //         $("#tooManyPlayersModal").modal("toggle");
+    //         $("#manyPlayersModalButton").on("click", function (e) {
+    //             window.close();
+    //         });
+    //     }
+    //     else if (players === 1) {
+    //         $("#justOnePlayerModal").modal("toggle");
+    //     }
+    //     else if (players === 0) {
+    //         $("#welcomeModal").modal("toggle");
+    //     }
+    // });
+
+    var userListRef = firebase.database().ref("USERS_ONLINE");
+    var myUserRef = userListRef.push();
+
+    // Monitor connection state on browser tab
+    firebase.database().ref(".info/connected").on("value", function (snap) {
+        if (snap.val()) {
+            // if we lose network then remove this user from the list
+            myUserRef.onDisconnect().remove();
+            // set user's online status
+            setUserStatus("online");
+        } else {
+            // client has lost network
+            setUserStatus("offline");
+        }
+    });
+
+    // Choosing a username for player-1 - on click events for the submit button
     $("#userBtn").on("click", function (e) {
         e.preventDefault();
+
+        var username = $("#username").val().trim();
+        $(".player1").text(username);
+
+        database.ref("players").push(username, function(err){
+            if(err){
+                console.log(err);
+            }
+            else{
+                console.log("Player Added");
+            }
+        });
+        $("#username").val("");
+
         console.log("UserName clicked");
     });
 
-    // images on click events
+    // Selecting fighter at the beginning of the game will change the gif animation.
     $(".navbar-brand").on("click", function (e) {
         e.preventDefault();
         console.log($(this).attr("data-name"));
 
-        // selecting only one image, which is inside an <a>, from the <div> with id="containerFighters"
+        // adding a border to the image of the fighter when clicked.
         $(this).parentsUntil("#containerFighters").find(".navbar-brand").removeClass("active");
         $(this).addClass("active");
 
         if (Object.keys(fightersURL).indexOf($(this).attr("data-name") > -1)) {
             $("#player1FighterChoice").attr("src", fightersURL[$(this).attr("data-name")].start);
-            console.log("correct");
+            $(".choices1Btn").attr("data-name", $(this).attr("data-name"));
+            console.log("fighter-start-gif");
         }
+    });
+
+    // Selecting a choice (r,p,s) will change gif animation for player-1.
+    $(".choices1Btn").on("click", function (e) {
+        $("#player1FighterChoice").attr("src", fightersURL[$(this).attr("data-name")].attack);
     });
 
     // chat buttons on click events
     $("#chatBtn").on("click", function (e) {
         e.preventDefault();
+
+        var chatMessage = $("#chatInput").val().trim();
+        $("#chatInput").val("");
+
+        var newChat = $("<p>");
+        newChat.addClass("card-text");
+        newChat.text(chatMessage);
+        $("#chatBox").append(newChat);
+        $("#chatContainer").scroll();
+
         console.log("Chat clicked");
     });
 })
