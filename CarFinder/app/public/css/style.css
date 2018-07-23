@@ -1,0 +1,38 @@
+body{
+    font-family: 'Iceland', cursive;
+    background-image: url("../images/logos.jpg");
+    background-size: cover;
+}
+/* Home page jumbortron */
+.j-1{
+    background-image: url("../images/road.jpg");
+    background-size: 100% 100%;
+    color: white;
+}
+/* Survey page jumbotron */
+.j-2{
+    background: black url("../images/car-sil.jpg") no-repeat center;
+    /* background-image: url("../images/car-sil.jpg");
+    background-size: 100% 100%; */
+    color: white;
+}
+/* Main container styling */
+.c-1{
+    background: linear-gradient(to left, #66ff66 35%, #ccff33 100%);
+    color: black;
+}
+/* Question styling */
+.boldQuestion {
+    font-weight: bold;
+}
+/* Horizontal lines styling */
+hr{
+    border: none;
+    height: 3px;
+    color: black;
+    background-color: #333;
+}
+/* API links */
+#apis{
+    color: white;
+}
