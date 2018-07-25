@@ -59,4 +59,5 @@ var users = [
     }
 ]
 
-module.exports = cars;
+module.exports.cars = cars;
+module.exports.users = users;

@@ -1,14 +1,17 @@
 var express = require("express");
-var cars = require("../data/friends");
+var objs = require("../data/cars");
 
 var router1 = express.Router();
 
-router1.get("/api/cars", function (req, res) {
-    res.json(cars);
+router1.get("/cars", function (req, res) {
+    res.json(objs.cars);
 });
 
-// router.get("/api/users", function (req, res) {
-//     res.json(users);
-// });
+router1.get("/users", function (req, res) {
+    res.json(objs.users);
+});
 
-module.exports= cars;
+// In the file "cars.js" an onject was created using module.exports. We are accessing that object by "require" and then set it
+// equal to "var objs". We then use the specific property of the object we want to address like "objs.cars" and "objs.users".
+
+module.exports= router1;
