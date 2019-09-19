@@ -1,8 +1,12 @@
-
+html {
+    position: relative;
+    min-height: 100%;
+}
 
 body {
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     background-image: url("../images/concrete-texture.png");
+    margin-bottom: 60px;
 }
 .navbar-brand {
     font-family: 'Georgia', Times, Times New Roman, serif;
@@ -13,6 +17,11 @@ body {
     border-bottom: solid 3px #cccccc;
     background-color: #cccccc;
 
+}
+.wrapper {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 30px;
 }
 .container-heading {
     font-family: 'Georgia', Times, Times New Roman, serif;
@@ -27,11 +36,14 @@ body {
     font-family: 'Georgia', Times, Times New Roman, serif;
     color: white;
 }
+/* To make a sticky footer set html to 'position: relative' and 'min-height: 100%' use a 'margin-bottom' on the body equaled to the 'height' of the footer; then use 'position: absolute' and 'bottom: 0' on the footer */
 .footer {
     color: white;
-    height: 50px;
+    height: 60px;
     background-color: #666666;
-    border-top: solid 3px #4aaaa5
+    border-top: solid 3px #4aaaa5;
+    position: absolute;
+    bottom: 0;
 }
 /* Contact Page */
 .btn {
@@ -46,16 +58,30 @@ body {
 }
 /* Portfolio Page */
 .apps {
+    /* width: 200px;
+    height: 200px;; */
     position: relative;
+    padding: 0;
+    background-color: blueviolet;
 }
 .apps:hover {
     opacity: .5;
 }
+.app-picture {
+    width: 100%;
+}
+/* .anchor {
+    position: relative;
+} */
 .banner {
+    z-index: 1;
     position: absolute;
     bottom: 10%;
     height: 25%;
-    width: 100%;
     background-color: #4aaaa5;
     color: white;
+}
+
+.portfolio-img {
+    width: 200px;
 }

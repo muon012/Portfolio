@@ -29,7 +29,7 @@ $(document).ready(function () {
     // function for displaying the gifs and their info.
     var display = function () {
 
-        //  ajax call
+        //  axios call
         var name = $(this).text();
         var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=qGD6PCU4bUY2ex7AoiWWohjR593PzQ1h&limit=10";
 
